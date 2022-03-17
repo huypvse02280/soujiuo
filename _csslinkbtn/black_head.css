@@ -1,0 +1,36 @@
+a.black_head {
+  display: inline-block !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  border-radius: 6px !important;
+  min-width: 40px !important;
+  max-width: 100% !important;
+  font-size: 14px !important;
+  line-height: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  padding: 0.8em 0.4em !important;
+  transition: all 0.2s !important;
+}
+a.black_head:visited {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  text-decoration: none !important;
+}
+a.black_head:active {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  text-decoration: none !important;
+}
+a.black_head:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+

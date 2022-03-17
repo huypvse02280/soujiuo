@@ -1,0 +1,36 @@
+a.btn-primary {
+  display: inline-block !important;
+  background: #a32f24 !important;
+  color: #ffffff !important;
+  border: 1px solid #a32f24 !important;
+  border-radius: 2px !important;
+  min-width: 2.4em !important;
+  font-size: 80% !important;
+  line-height: 1.3 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  padding: 0.5em !important;
+  transition: all 0.2s !important;
+}
+a.btn-primary:visited {
+  background: #a32f24 !important;
+  color: #ffffff !important;
+  border: 1px solid #a32f24 !important;
+  text-decoration: none !important;
+}
+a.btn-primary:active {
+  background: #c0392b !important;
+  color: #ffffff !important;
+  border: 1px solid #c0392b !important;
+  text-decoration: none !important;
+}
+a.btn-primary:hover {
+  background: #c0392b !important;
+  color: #ffffff !important;
+  border: 1px solid #c0392b !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+
+
