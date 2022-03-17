@@ -1,0 +1,46 @@
+@charset "utf-8";
+@font-face{
+  font-family: 'realscare_mincho';
+  src: url('../fontdata/fontna/ふぉんとうは怖い明朝体.eot');
+  src: local('07ふぉんとうは怖い明朝体'),
+       url('../fontdata/fontna/ふぉんとうは怖い明朝体.eot?#iefix') format('embedded-opentype'),
+       url('../fontdata/fontna/ふぉんとうは怖い明朝体.woff') format('woff'),
+       url('../fontdata/fontna/ふぉんとうは怖い明朝体.otf') format('opentype');
+  font-display: swap;
+}
+@font-face{
+  font-family: 'lnove_pop';
+  src: url('../fontdata/fontna/ラノベPOP.eot');
+  src: local('07ラノベPOP'),
+       url('../fontdata/fontna/ラノベPOP.eot?#iefix') format('embedded-opentype'),
+       url('../fontdata/fontna/ラノベPOP.woff') format('woff'),
+       url('../fontdata/fontna/ラノベPOP.otf') format('truetype');
+  font-display: swap;
+}
+@font-face{
+  font-family: 'log_type_gothic';
+  src: url('../fontdata/fontna/ロゴたいぷゴシックCondense.eot');
+  src: local('07ロゴたいぷゴシックCondense'),
+       url('../fontdata/fontna/ロゴたいぷゴシックCondense.eot?#iefix') format('embedded-opentype'),
+       url('../fontdata/fontna/ロゴたいぷゴシックCondense.woff') format('woff'),
+       url('../fontdata/fontna/ロゴたいぷゴシックCondense.otf') format('opentype');
+  font-display: swap;
+}
+@font-face{
+  font-family: 'nikumarufont';
+  src: url('../fontdata/fontna/07にくまるフォント.eot');
+  src: local('07にくまるフォント'),
+       url('../fontdata/fontna/07にくまるフォント.eot?#iefix') format('embedded-opentype'),
+       url('../fontdata/fontna/07にくまるフォント.woff') format('woff'),
+       url('../fontdata/fontna/07にくまるフォント.otf') format('opentype');
+  font-display: swap;
+}
+@font-face{
+  font-family: 'yasashisa_antique';
+  src: url('../fontdata/fontna/07YasashisaAntique.eot');
+  src: local('07やさしさアンチック'),
+       url('../fontdata/fontna/07YasashisaAntique.eot?#iefix') format('embedded-opentype'),
+       url('../fontdata/fontna/07YasashisaAntique.woff') format('woff'),
+       url('../fontdata/fontna/07YasashisaAntique.otf') format('opentype');
+  font-display: swap;
+}
