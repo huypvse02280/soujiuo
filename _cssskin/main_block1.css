@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.cssskin-main_block1 .c-large_headline {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 641px) {
+.cssskin-main_block1 .c-large_headline {
+  font-size: 17px;
+}
+
+}

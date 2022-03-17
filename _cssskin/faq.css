@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.cssskin-faq .c-large_headline {
+  font-size: 24px;
+  color: #4f64bb;
+  font-weight: bold;
+}
+
+.cssskin-faq .c-small_headline {
+  color: #65bb50;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.cssskin-faq .c-body {
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.7;
+}
+

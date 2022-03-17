@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.cssskin-tel .c-large_headline {
+  font-size: 40px;
+  color: #000000;
+}
+
+.cssskin-tel a:visited {
+  color: #000000;
+}
+
+@media only screen and (max-width: 641px) {
+.cssskin-tel .c-large_headline {
+  font-size: 30px;
+  color: #000000;
+}
+
+}

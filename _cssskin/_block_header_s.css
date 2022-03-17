@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@media only screen and (max-width: 641px) {
+.cssskin-_block_header_s .column.-column1 {
+  width: 18% !important;
+}
+
+.cssskin-_block_header_s .column.-column2 {
+  width: 50% !important;
+  margin-top: 10px;
+}
+
+.cssskin-_block_header_s .column.-column3 {
+  width: 28% !important;
+  padding-top: 20px;
+}
+
+}

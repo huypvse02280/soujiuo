@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.cssskin-_block_main .c-large_headline {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.cssskin-_block_main .c-small_headline {
+  color: #000000;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.cssskin-_block_main .c-body {
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
