@@ -10,17 +10,18 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
+    const { useState, useEffect } = React
     const Header = ()=>{
 		return (
 			<div className="flex flex-row flex-wrap py-2">
 			  <div className="logo relative w-60 flex-none">
-				<div className="absolute -top-2 left-0 flex space-x-2 text-xs font-bold" style="font-size:5px">
+				<div className="absolute -top-2 left-0 flex space-x-2 text-xs font-bold" style={{fontSize:"5px"}}>
 				  <span className="ordinal">福岡をきれいにします</span>
 				  <span>ソウジウオ</span>
 				</div>
 				<div className="mt-2">
 				  <a href="home.html">
-					<img className="w-[220px]" src="./images/top.png" alt="ソウジウオ">
+					<img className="w-[220px]" src="./images/top.png" alt="ソウジウオ"/>
 				  </a>
 				</div>
 			  </div>
@@ -33,13 +34,15 @@
 				  <a className="text-sm font-bold underline underline-offset-4 transition decoration-2" href="contact.html">お問合せ</a>
 				</div>
 				<div className="inline-flex items-center space-x-1">
-				  <a target=”_blank”  href="https://www.facebook.com/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%BD%E3%82%A6%E3%82%B8%E3%82%A6%E3%82%AA-111515567279478/" className="rounded bg-blue-500 p-1 font-semibold text-white">
+				  <a target="_blank" 
+					href="https://www.facebook.com/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%BD%E3%82%A6%E3%82%B8%E3%82%A6%E3%82%AA-111515567279478/" 
+					className="rounded bg-blue-500 p-1 font-semibold text-white">
 					<svg className="h-3 w-3 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
 				  </a>
-				  <a target=”_blank” href="https://www.instagram.com/soujiuo/" className="rounded font-semibold text-blue-50">
+				  <a target="_blank" href="https://www.instagram.com/soujiuo/" className="rounded font-semibold text-blue-50">
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7"
 					  viewBox="0 0 24 24"
-					  style=" fill:#000000;">    <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path></svg>
+					  style={{fill:"#000000"}}>    <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"></path></svg>
 				  </a>
 				</div>
 			  </div>
@@ -47,12 +50,60 @@
 		)
 	}
 	
-	const ContactForm = ()=>{
+	const ContactForm = ({onChangeData, onSubmit}) =>{
 		return (
-			<>
+			<div>
+				<br/><br/>
 				<div className="text-center p-2 font-bold">
-				  お問合せ
+					  お問合せ
 				</div>
+				<div className="border border-gray-300 bg-slate-100 shadow rounded-md p-2">
+				<div className="container flex flex-col space-y-1 md:w-1/2 md:mx-auto">
+					<p>
+						<br/>
+						<br/>
+					</p>
+					<div className="flex flex-col space-y-1">
+						<label >お名前<span className="text-red-600 font-bold">（＊）</span></label>
+						<input
+							onChange={(e)=>{onChangeData('fullName', e.target.value)}}
+							className="focus:outline-none border border-gray-200 p-1 rounded-md focus:ring-2 focus:ring-slate-500 shadow-sm"/>
+						<br/>
+					</div>
+					<div className="flex flex-col space-y-1">
+						<label >フリガナ<span></span></label>
+						<input 
+							onChange={(e)=>{onChangeData('furigana', e.target.value)}}
+							className="focus:outline-none border border-gray-200 p-1 rounded-md focus:ring-2 focus:ring-slate-500 shadow-sm"/>
+						<br/>
+					</div>
+					<div className="flex flex-col space-y-1">
+						<label >TEL<span className="text-red-600 font-bold">（＊）</span></label>
+						<input 
+							onChange={(e)=>{onChangeData('tel', e.target.value)}}
+							className="focus:outline-none border border-gray-200 p-1 rounded-md focus:ring-2 focus:ring-slate-500 shadow-sm"/>
+						<br/>
+					</div>
+					<div className="flex flex-col space-y-1">
+						<label >お問い合わせ内容<span className="text-red-600 font-bold">（＊）</span></label>
+						<textarea 
+							cols="30" 
+							rows="5"
+							onChange={(e)=>{onChangeData('content', e.target.value)}}
+							className="focus:outline-none border border-gray-200 p-1 rounded-md focus:ring-2 focus:ring-slate-500 shadow-sm"></textarea>
+						<br/>
+					</div>
+					<button onClick = {(e) => onSubmit()} className="p-2 px-4 mt-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 right">送信</button>
+				</div>
+				<p><br/><br/></p>
+			</div>
+			</div>
+		)
+	}
+	
+	const Footer = ()=>{
+		return (
+			<div>
 				<div className="grid grid-cols-1 lg:grid-cols-5 gap-2 lg:gap-4 p-4 bg-slate-400 mt-2">
 				  {/**<div className="lg:col-span-3 text-white">
 						GOOGLE MAP
@@ -74,7 +125,7 @@
 						</div>
 				  </div>**/}
 				  <div className="lg:col-span-2">
-					  <img className="max-w-[220px]" src="./images/top.png" alt="ソウジウオ">  
+					  <img className="max-w-[220px]" src="./images/top.png" alt="ソウジウオ"/>  
 					  <div className="mt-4 text-white">
 						<p className="flex space-x-4 space-y-4">
 						  <span>会社名</span> 
@@ -108,17 +159,64 @@
 					  </div>
 				  </div>
 				</div>
-			</>
-		}
+			</div>
+		)
 	}
 	
-    const App = ()=>{
+    const App =()=>{
+		const appUrl = window.location.protocol+'//'+window.location.hostname+':'+window.location.port
+		const formDataInit = {
+			fullName	: "",
+			furigana	: "",
+			tel			: "",
+			content		: ""
+		}
+		const [formData, setFormData] = useState(formDataInit)
+		const onChangeData = (name, value) =>{
+			setFormData({...formData, [name]:value})
+		}
+		useEffect(()=>{
+			console.log(formData)
+		}, [formData])
+		
+		const fetchPost = async(uri, param = null) => {
+			uri = [appUrl, uri].join('')
+			try{
+				const res = await fetch(uri, {
+					method  : 'POST',
+					body    : JSON.stringify(param),
+					headers : {
+						'Content-Type'  : 'application/json'
+					}
+				})
+				if(!res.ok) {
+					return {code:"error", message: res.statusText}
+				}
+				const result = await res.json()
+				return result
+			}catch(error) {
+				return {code:"error", message:error.message}
+			}
+		}
+		
+		const submitContactForm = async()=>{
+			if(confirm("問い合わせ内容を送信します。よろしいですか？")) {
+				const res = await fetchPost('api/subscribe', formData)
+				if(res.code === "success"){
+					alert("データを送信しました。ありがとうございました。")
+				}else {
+					alert(res.message)
+				}
+			}
+		}
+		
         return (
             <div className="relative mx-auto w-full md:w-5/6 max-w-5xl p-2 lg:p-0">
                 {/**--　ヘッダ **/}
                 <Header/>
 				{/** お問合せフォーム **/}
-                <ContactForm/>
+				<ContactForm onChangeData={onChangeData} onSubmit={submitContactForm}/>
+                <Footer />
 				{/** メニューフッター **/}
 				<div className="flex justify-center space-x-2 md:space-x-6 bg-slate-400 text-white  w-full mt-2 p-4">
 					<a href="">業務内容</a>
